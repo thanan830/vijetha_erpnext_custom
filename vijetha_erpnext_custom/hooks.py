@@ -6,6 +6,16 @@ app_email = "vijetha_erpnext_custom@gmail.com"
 app_license = "mit"
 # required_apps = []
 
+fixtures=[
+          {
+        "dt": 'Custom Field',
+        "filters": [
+            ["module", "=", "Vijetha Erpnext Custom" ]
+            ]
+     },
+     ]
+
+
 # Includes in <head>
 # ------------------
 
