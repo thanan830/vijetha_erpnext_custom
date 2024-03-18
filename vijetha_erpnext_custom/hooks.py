@@ -13,6 +13,12 @@ fixtures=[
             ["module", "=", "Vijetha Erpnext Custom" ]
             ]
      },
+     {
+     	"dt": 'Letter Head',
+        "filters": [
+            ["name", "=", "Vijetha Company Letter Head" ]
+            ]
+     }
      ]
 
 

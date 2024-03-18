@@ -1,0 +1,25 @@
+[
+ {
+  "align": "Left",
+  "content": "\n    <style>\n        .container {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n        }\n\n        .image {\n            width: 30%;\n        }\n\n        .text {\n            width: 40%;\n            text-align:left;\n        }\n    </style>\n\n    <div class=\"container\">\n    <div class=\"image\">\n        <img src=\"{{ frappe.db.get_value('Company', doc.company, 'company_logo') or '' }}\" alt=\"\" style=\"height: 90px;\">\n        \n    </div>\n    <div class=\"text\">\n        \n            <b>{{doc.company}}</b>\n            <br>\n            {% set val1 = frappe.db.get_value(\"Dynamic Link\", {\"parenttype\": \"Address\", \"link_doctype\":'Company', \"link_name\": doc.company}, \"parent\") %}\n            {%if val1 != None%}\n              {{frappe.db.get_value(\"Address\",val1,\"address_line1\")}}<br>\n              {% if frappe.db.get_value(\"Address\",val1,\"address_line2\") == None %}\n                {{ \" \"}}\n              {% else %}\n                {{frappe.db.get_value(\"Address\",val1,\"address_line2\")}}\n              {% endif %}\n              {{frappe.db.get_value(\"Address\",val1,\"city\")}}\n              \n              \n              <br>\n              {% if frappe.db.get_value(\"Address\",val1,\"gst_state\") == None %}\n                {{ \" \"}}\n              {% else %}\n                {{frappe.db.get_value(\"Address\",val1,\"gst_state\")}}-{{frappe.db.get_value(\"Address\",val1,\"pincode\")}}.\n              {% endif %}\n              \n              <br>Phone: \n              {% if frappe.db.get_value(\"Address\",val1,\"Phone\") == None %}\n                {{ \" \"}}\n              {% else %}\n                +91-{{frappe.db.get_value(\"Address\",val1,\"Phone\")}}\n              {% endif %}\n              \n              <br>\n              Fax:\n              {% if frappe.db.get_value(\"Address\",val1,\"fax\") == None %}\n                {{ \" \"}}\n              {% else %}\n                {{frappe.db.get_value(\"Address\",val1,\"fax\")}} \n              {% endif %}\n              \n            {% endif %}\n        </div>\n</div>\n",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": null,
+  "footer_align": "Left",
+  "footer_image": null,
+  "footer_image_height": 0.0,
+  "footer_image_width": 0.0,
+  "footer_script": null,
+  "footer_source": "HTML",
+  "header_script": null,
+  "image": null,
+  "image_height": 0.0,
+  "image_width": 0.0,
+  "is_default": 0,
+  "letter_head_name": "Vijetha Company Letter Head",
+  "modified": "2024-03-18 13:32:08.241573",
+  "name": "Vijetha Company Letter Head",
+  "source": "HTML"
+ }
+]
